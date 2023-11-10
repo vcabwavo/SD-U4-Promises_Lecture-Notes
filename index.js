@@ -32,14 +32,13 @@
     ALWAYS returns an object
 */
 
-
 //! Resolvers
 /* 
     - When returned, the returnData() function will return a Promise instead of a string.
 
     - Chained with a resolver
     - Takes in a callback function
-    - syntax notes: semicolo (;) placed ONLY after the last resolver
+    - syntax notes: semicolon (;) placed ONLY after the last resolver
 
 *       Keywords:
             .then(cb) 
@@ -47,9 +46,7 @@
                 - can be chained together
             .catch(cb)
                 - error
-
 */
-
 
 //? The Process
 /* 
