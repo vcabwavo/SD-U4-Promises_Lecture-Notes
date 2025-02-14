@@ -15,8 +15,25 @@
                 - ex: 5 seconds = 5000
 */
 
+// function getData (){
+//     setTimeout( () => {
+//         return "Data has been received";
+//     }, 3000);
+// }
 
-//! Promise
+// let data = getData();
+// console.log(data); // undefined
+
+
+function getData(cb) {
+    setTimeout (() => {
+            cb('Data has been received 2');
+        }, 3000);
+}
+
+// getData(data => console.log(data))
+// console.logo(getData());
+// //! Promise
 /* 
     A promise is an object that may produce a singular value in the return.
 
@@ -31,6 +48,21 @@
 
     ALWAYS returns an object
 */
+
+function returnData() {
+    
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(true){
+                resolve('some data from promise')
+            }else{
+                reject('error: promise rejected')
+            }
+        })
+    })
+}
+
+console.log(returnData());
 
 //! Resolvers
 /* 
@@ -47,6 +79,19 @@
             .catch(cb)
                 - error
 */
+
+returnData()
+    .then(response => {
+        console.log('1st', response)
+        return response
+    })
+    .then(data => {
+        console.log('2nd', data)
+
+    })
+    .catch(function(err){
+        console.log('CATCH', err)
+    })
 
 //? The Process
 /* 
